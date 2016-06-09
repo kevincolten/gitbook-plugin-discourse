@@ -17,7 +17,7 @@
   },
   "gitbook": {
     "properties": {
-      "shortName": {
+      "discourseUrl": {
         "type": "string",
         "title": "discourseUrl",
         "required": true
