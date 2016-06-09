@@ -7,7 +7,7 @@ to the `book.json` file, along with the URL of your Discourse web site
 {
   "plugins": ["discourse-external-integration"],
   "pluginsConfig": {
-    "discourse": {
+    "discourse-external-integration": {
       "discourseUrl": "https://url-of-your-discourse-server/"
     }
   }
