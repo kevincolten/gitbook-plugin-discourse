@@ -26,8 +26,6 @@ require([
       d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
     })();
-
-    insertDiscourseDiv();
   });
 
   gitbook.events.bind("page.change", insertDiscourseDiv);
