@@ -1,0 +1,27 @@
+{
+  "name": "gitbook-plugin-discourse-external-integration",
+  "description": "Discourse integration into GitBook",
+  "main": "index.js",
+  "version": "0.1.0",
+  "engines": {
+    "gitbook": ">=2.5.0"
+  },
+  "homepage": "https://git.framasoft.org/etalab/gitbook-plugin-discourse",
+  "repository": {
+    "type": "git",
+    "url": "https://git.framasoft.org/etalab/gitbook-plugin-discourse.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://git.framasoft.org/etalab/gitbook-plugin-discourse/issues"
+  },
+  "gitbook": {
+    "properties": {
+      "shortName": {
+        "type": "string",
+        "title": "discourseUrl",
+        "required": true
+      }
+    }
+  }
+}
