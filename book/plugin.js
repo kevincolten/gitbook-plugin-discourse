@@ -13,8 +13,8 @@ require([
   }
 
   gitbook.events.bind("start", function (e, config) {
-    config.discourse = config.discourse || {};
-    var discourseUrl = config.discourse.discourseUrl;
+    config['discourse-external-integration']= config['discourse-external-integration'] || {};
+    var discourseUrl = config['discourse-external-integration'].discourseUrl;
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     DiscourseEmbed = {
