@@ -10,7 +10,7 @@ require([
       "id": "discourse-comments"
     }));
     $("head").append($("<script>", {
-      "async": true,
+      "async": false,
       "id": "discourse-embed-script",
       "src": DiscourseEmbed.discourseUrl + 'javascripts/embed.js',
       "type": "text/javascript"
