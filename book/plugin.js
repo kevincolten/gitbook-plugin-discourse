@@ -2,7 +2,7 @@ require([
   "gitbook",
   "jQuery"
 ], function(gitbook, $) {
-  function embedDiscourse() {
+  function embedDiscourse(config) {
     config['discourse-external-integration'] = config['discourse-external-integration'] || {};
     DiscourseEmbed = {
       discourseUrl: config['discourse-external-integration'].discourseUrl,
@@ -22,6 +22,10 @@ require([
     }));
   }
 
-  gitbook.events.bind("start", embedDiscourse);
-  gitbook.events.bind("page.change", embedDiscourse);
+  gitbook.events.bind("start", function (e, config) {
+    embedDiscourse(config);
+  });
+  gitbook.events.bind("page.change", function (e, config) {
+    embedDiscourse(config);
+  });
 });
