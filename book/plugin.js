@@ -12,7 +12,7 @@ require([
     $("head").append($("<script>", {
       "async": true,
       "id": "discourse-embed-script",
-      "src": DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+      "src": DiscourseEmbed.discourseUrl + 'javascripts/embed.js',
       "type": "text/javascript"
     }));
   }
