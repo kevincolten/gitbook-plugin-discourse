@@ -2,8 +2,6 @@ require([
   "gitbook",
   "jQuery"
 ], function(gitbook, $) {
-  var use_identifier = false;
-
   function embedDiscourse() {
     config['discourse-external-integration'] = config['discourse-external-integration'] || {};
     DiscourseEmbed = {
