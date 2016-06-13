@@ -10,7 +10,7 @@ require([
       "id": "discourse-comments"
     }));
     $("head").append($("<script>", {
-      "async": false,
+      "async": true,
       "id": "discourse-embed-script",
       "src": DiscourseEmbed.discourseUrl + 'javascripts/embed.js',
       "type": "text/javascript"
@@ -23,7 +23,6 @@ require([
       discourseUrl: config['discourse-external-integration'].discourseUrl,
       discourseEmbedUrl: window.location.href
     };
-    embedDiscourse(config);
   });
 
   gitbook.events.bind("page.change", embedDiscourse);
