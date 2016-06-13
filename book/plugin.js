@@ -4,32 +4,26 @@ require([
 ], function(gitbook, $) {
   var use_identifier = false;
 
-  function insertDiscourseDiv() {
-      var $discourseDiv = $("<div>", {
-        "id": "discourse-comments"
-      });
-      var pageInner = $(".book-body .page-inner");
-      if ($("#discourse-comments", pageInner).length === 0) pageInner.append($discourseDiv);
-  }
-
-  gitbook.events.bind("start", function (e, config) {
-    config['discourse-external-integration']= config['discourse-external-integration'] || {};
-    var discourseUrl = config['discourse-external-integration'].discourseUrl;
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
+  function embedDiscourse() {
+    config['discourse-external-integration'] = config['discourse-external-integration'] || {};
     DiscourseEmbed = {
-      discourseUrl: discourseUrl,
+      discourseUrl: config['discourse-external-integration'].discourseUrl,
       discourseEmbedUrl: window.location.href
     };
 
-    (function () {
-      var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-      d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-    })();
+    // The only way to re-execute Discourse embedding script seems to be to re-insert it.
+    $("#discourse-comments").remove();
+    $("#discourse-embed-script").remove();
+    $(".book-body .page-inner").append($("<div>", {
+      "id": "discourse-comments"
+    }));
+    $("head").append($("<script>", {
+      "async": true,
+      "id": "discourse-embed-script",
+      "type": "text/javascript"
+    }));
+  }
 
-    insertDiscourseDiv();
-  });
-
-  gitbook.events.bind("page.change", insertDiscourseDiv);
+  gitbook.events.bind("start", embedDiscourse);
+  gitbook.events.bind("page.change", embedDiscourse);
 });
