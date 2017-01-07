@@ -1,6 +1,8 @@
 # Discourse integration for GitBook
 
-To use the Discourse plugin in your Gitbook project, add the discourse plugin
+forked from https://git.framasoft.org/etalab/gitbook-plugin-discourse
+
+To use the Discourse plugin in your GitBook project, add the discourse plugin
 to the `book.json` file, along with the URL of your Discourse web site
 
 ```json
@@ -8,7 +10,8 @@ to the `book.json` file, along with the URL of your Discourse web site
   "plugins": ["discourse-external-integration"],
   "pluginsConfig": {
     "discourse-external-integration": {
-      "discourseUrl": "https://url-of-your-discourse-server/"
+      "discourseUrl": "https://url-of-your-discourse-server/",
+      "auth": "username:password@"
     }
   }
 }

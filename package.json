@@ -1,19 +1,19 @@
 {
-  "name": "gitbook-plugin-discourse-external-integration",
-  "description": "Discourse integration into GitBook",
+  "name": "gitbook-plugin-discourse-external-integration-auth",
+  "description": "Discourse integration into GitBook with Basic Auth",
   "main": "index.js",
   "version": "0.2.6",
   "engines": {
     "gitbook": ">=2.5.0"
   },
-  "homepage": "https://git.framasoft.org/etalab/gitbook-plugin-discourse",
+  "homepage": "https://github.com/kevincolten/gitbook-plugin-discourse",
   "repository": {
     "type": "git",
-    "url": "https://git.framasoft.org/etalab/gitbook-plugin-discourse.git"
+    "url": "git+https://github.com/kevincolten/gitbook-plugin-discourse.git"
   },
-  "license": "Apache-2.0",
+  "license": "WTFPL",
   "bugs": {
-    "url": "https://git.framasoft.org/etalab/gitbook-plugin-discourse/issues"
+    "url": "https://github.com/kevincolten/gitbook-plugin-discourse/issues"
   },
   "gitbook": {
     "properties": {
@@ -23,5 +23,15 @@
         "required": true
       }
     }
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Colten",
+  "keywords": [
+    "gitbook",
+    "discourse",
+    "auth",
+    "embed"
+  ]
 }

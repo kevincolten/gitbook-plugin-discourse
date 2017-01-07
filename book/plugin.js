@@ -3,8 +3,11 @@ require([
   "jQuery"
 ], function(gitbook, $) {
   function embedDiscourse() {
+    config['discourse-external-integration'] = config['discourse-external-integration'] || {};
+    var parser = document.createElement('a');
+    parser.href = window.location.href
     // The only way to re-execute Discourse embedding script seems to be to re-insert it.
-    DiscourseEmbed.discourseEmbedUrl = window.location.href;
+    DiscourseEmbed.discourseEmbedUrl = parser.protocol + config['discourse-external-integration'].auth + window.location.href.replace(parser.protocol, '');
     $("#discourse-comments").remove();
     $("#discourse-embed-script").remove();
     $(".book-body .page-inner").append($("<div>", {
@@ -19,7 +22,6 @@ require([
   }
 
   gitbook.events.bind("start", function (e, config) {
-    config['discourse-external-integration'] = config['discourse-external-integration'] || {};
     DiscourseEmbed = {
       discourseUrl: config['discourse-external-integration'].discourseUrl
     };
