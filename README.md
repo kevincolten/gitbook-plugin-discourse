@@ -7,9 +7,9 @@ to the `book.json` file, along with the URL of your Discourse web site
 
 ```json
 {
-  "plugins": ["discourse-external-integration"],
+  "plugins": ["discourse-external-integration-auth"],
   "pluginsConfig": {
-    "discourse-external-integration": {
+    "discourse-external-integration-auth": {
       "discourseUrl": "https://url-of-your-discourse-server/",
       "auth": "username:password@"
     }
